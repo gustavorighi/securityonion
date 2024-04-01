@@ -1,8 +1,0 @@
-{
-  "description" : "beats.common",
-  "processors" : [
-    { "pipeline":      { "if": "ctx.winlog?.channel == 'Microsoft-Windows-Sysmon/Operational'",   "name": "sysmon"  }  },
-    { "pipeline":      { "if": "ctx.winlog?.channel != 'Microsoft-Windows-Sysmon/Operational' && ctx.containsKey('winlog')",  "name":"win.eventlogs" }  },
-    { "pipeline":    { "name": "common" } }
-  ]
-}
